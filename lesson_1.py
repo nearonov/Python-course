@@ -1,6 +1,6 @@
-name = 'Eugene'
-print(dir(name))
-print(name.upper())
+# name = 'Eugene'
+# print(dir(name))
+# print(name.upper())
 
 def fun(name):
     print(name)
