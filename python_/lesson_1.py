@@ -43,7 +43,7 @@
 # print(pow(base, pover))
 
 
-#комплексні числа
+# комплексні числа
 
 # complex_a=4 + 5j
 # complex_b=7 + 6j
@@ -57,3 +57,14 @@
 # print(12>11)
 # print('nuts'>'nata')
 
+# Зміна обєктів в Python
+
+from copy import deepcopy
+my_list = {1:True,2:[]}
+#other_list = {1:True}
+#other_list = my_list
+#other_list = deepcopy(my_list) #Глубока копія
+other_list = my_list.copy() # Повірхнева копія
+other_list [2].append('Eugene')
+print(id(my_list), my_list)
+print(id(other_list),other_list)
