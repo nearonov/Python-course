@@ -101,13 +101,61 @@
 
 #Практика
 
-my_dict = {}
-for n in range(3):
-    key= input('Ввести ключ :')
-    key_arg = input('Ввести значення ключ :')
-    my_dict[key]= key_arg
-print(my_dict)
+# my_dict = {}
+# for n in range(3):
+#     key= input('Ввести ключ :')
+#     key_arg = input('Ввести значення ключ :')
+#     my_dict[key]= key_arg
+# print(my_dict)
+
+
 # fourth = 4
 # my_dict [4] = 'vbn'
 # del my_dict [second]
 # print(my_dict)
+
+#--------------------------------------
+# Оператор распаковки словника  **
+#--------------------------------------
+
+# my_motobike = {
+#      'brand': 'Dukati',
+#      'price': 25000,
+#      'engine_vol': 1.2,
+#  }
+# new_dict = {**my_motobike, 'age':1,}
+# print(new_dict) # {'brand': 'Dukati', 'price': 25000, 'engine_vol': 1.2, 'age': 1}
+
+
+#-----------------------------------------------
+#Обєднання словників
+#----------------------------------------------
+
+# button_style = {
+#      'brand': 'Dukati',
+#      'price': 25000,
+#      'engine_vol': 1.2,
+#  }
+# button_info = {'id':856432}
+# button_default={'color':'blue'}
+# button = button_style | button_info | button_default
+# print(button)
+# # {'brand': 'Dukati', 'price': 25000, 'engine_vol': 1.2, 'id': 856432, 'color': 'blue'}
+
+# ----------------------------------
+# Распаковка словників
+# -----------------------------------
+
+# button_style = {
+#
+#      'name': 'Eugene',
+#      'coment': 23,
+#  }
+# def info_blog(name,coment=0):
+#     if not coment:
+#         return f"{name} no has coment"
+#     return f"{name} has {coment} coment"
+# #print(info_blog(button_style['name'], button_style['coment']))
+# print(info_blog(**button_style))
+
+

@@ -57,3 +57,56 @@
 # three_list = one_list + two_list
 # print(three_list)
 # print(one_list.__add__(two_list))
+
+# ----------------------------------
+# Распаковка списков
+# -----------------------------------
+
+# my_list = [1, 2, 3]
+# first, second, third = my_list
+# print(first) # 1
+# print(second) # 2
+# print(third) # 3
+# print(my_list) # [1, 2, 3]
+
+# my_fruits = ['banana', 'apple', 'lime']
+# my_apple ,*new_fruits = my_fruits
+# print(my_apple) #banana
+# print(new_fruits) #['apple', 'lime']
+# print(my_fruits) #['banana', 'apple', 'lime']
+
+# ----------------------------------------
+# Распаковка списка в позиційні аргументи
+# ----------------------------------------
+
+# my_list = ['Eugene',23]
+#
+#
+# def blog_info(name, blogs):
+#     if not blogs:
+#         return f"{name} no blogs"
+#     return f"{name} has {blogs} blogs"
+# arg_one, arg_two = my_list
+#
+# print(blog_info(*my_list))
+# print(blog_info(my_list[0], my_list[1]))
+# print(blog_info(arg_one, arg_two))
+# Eugene has 23 blogs
+# Eugene has 23 blogs
+# Eugene has 23 blogs
+
+#--------------------------------------------
+#Практичне завдання №140
+#---------------------------------------------
+
+my_list = [{'name': 'Eugene', 'age': 55}, {'Nataly': 'Balabat', 'age': 49}, {'name': 'id', 'id': 1234}]
+arg_one, arg_two, arg_there = my_list
+
+
+def get_info(name, blogs):
+    return f"{name} {blogs}"
+
+
+print(get_info(arg_one['name'], arg_one['age']))
+print(get_info(arg_two['Nataly'], arg_two['age']))
+print(get_info(arg_there['name'], arg_there['id']))

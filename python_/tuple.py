@@ -25,7 +25,24 @@
 #     print(s)
 #     n = s + 1
 
-my_tuple = ([1,2,3], {'first':True, 'second':'abc'})
-other_tuple = (23, 33,67)
-sum_tuple = my_tuple+other_tuple
-print(sum_tuple)
+# my_tuple = ([1,2,3], {'first':True, 'second':'abc'})
+# other_tuple = (23, 33,67)
+# sum_tuple = my_tuple+other_tuple
+# print(sum_tuple)
+
+# ----------------------------------
+# Распаковка кортежей
+# -----------------------------------
+
+# my_tuple = (1, 2, 3)
+# first, second, third = my_tuple
+# print(first) # 1
+# print(second) # 2
+# print(third) # 3
+# print(my_tuple) # (1, 2, 3)
+
+my_fruits = ('banana', 'apple', 'lime')
+my_apple ,*new_fruits = my_fruits
+print(my_apple) #banana
+print(new_fruits) #['apple', 'lime']
+print(my_fruits) #('banana', 'apple', 'lime')

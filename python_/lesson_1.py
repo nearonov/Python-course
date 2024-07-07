@@ -59,12 +59,41 @@
 
 # Зміна обєктів в Python
 
-from copy import deepcopy
-my_list = {1:True,2:[]}
-#other_list = {1:True}
-#other_list = my_list
-#other_list = deepcopy(my_list) #Глубока копія
-other_list = my_list.copy() # Повірхнева копія
-other_list [2].append('Eugene')
-print(id(my_list), my_list)
-print(id(other_list),other_list)
+# from copy import deepcopy
+# my_list = {1:True,2:[]}
+# other_list = {1:True}
+# other_list = my_list
+# other_list = deepcopy(my_list) #Глубока копія
+# other_list = my_list.copy() # Повірхнева копія
+# other_list [2].append('Eugene')
+# print(id(my_list), my_list)
+# print(id(other_list),other_list)
+
+# -----------------------------------
+# Зєднання строк
+# ------------------------------------
+
+# print('Eugene '+'Nearonov')
+# # Eugene Nearonov
+# print('Eugene '.__add__('Nearonov'))
+# # Eugene Nearonov
+
+# -----------------------------------
+# Форматування строк - f строки
+# ------------------------------------
+# soname = 'Eugene'
+# name = 'Nearonov'
+# sn = f"{soname} {name}"
+# print(sn)
+# Eugene Nearonov
+
+
+# name = 'eugene'
+# hoby ='bicycle'
+# city = 'rivne'
+# time_wan = 8
+# time_tow = 10
+# info = f"i'm {name}, i like to ride a {hoby} around the city {city} from {time_wan} am to {time_tow} pm.".title()
+# print(info)
+# I'M Eugene, I Like To Ride A Bicycle Around The City Rivne From 8 Am To 10 Pm.
+
