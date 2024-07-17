@@ -48,4 +48,5 @@ my_set.add(100)
 other_set = {2,34,9,45}
 new_set = my_set.intersection(other_set)
 print(list(new_set))
+print(my_set)
 #[9, 2]
