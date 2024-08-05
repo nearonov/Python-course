@@ -85,7 +85,7 @@
 # print(dog_one.species)  # Canis familiaris
 # dog_one.age = 13  # значения можно менять динамически
 # print(dog_one.age)  # 13
-# print(dog_one)  # Ім я собаки chack ,а вік собаки 13 років.
+# print(dog_one)  # Ім я собаки chack ,а вік собаки 13 років.Chack's coat is brown.
 #
 #
 # class Car:
@@ -185,4 +185,4 @@ my_list = ExtendedList(['Eugene', 'Nataliy', 'Bogdan'])
 my_list.print_info_list() #list has 3 elements
 my_list.append('Ivan')
 my_list.print_info_list() #list has 4 elements
-# Єархія класів: my_list-> ExtendedList -> list -> object
+#Єархія класів: my_list-> ExtendedList -> list -> object

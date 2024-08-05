@@ -134,8 +134,8 @@
 
 # def mult_by_factor(value, multiplier=1):
 #     return value * multiplier
-#
-#
+
+
 # print(mult_by_factor(5))
 # # 5
 # print(mult_by_factor(5, 3))
@@ -204,11 +204,20 @@
 # mult = lambda a, b: a * b
 # print(mult(3,5))
 
-def get_info(name):
-    return lambda gate :f"{gate} {name}"
+# def get_info(name):
+#     return lambda gate :f"{gate} {name}"
+#
+# info = get_info('Eugene')
+# print(info('Hello!'))
+#
+# moning=get_info('Eugene')
+# print(moning("Goog moning"))
 
-info = get_info('Eugene')
-print(info('Hello!'))
 
-moning=get_info('Eugene')
-print(moning("Goog moning"))
+#print(f"__name__ = {__name__}")
+
+def func():
+    print("Функція відпрацювала!")
+
+if __name__ == "__main__":
+    func()
