@@ -216,8 +216,29 @@
 
 #print(f"__name__ = {__name__}")
 
-def func():
-    print("Функція відпрацювала!")
+# def func():
+#     print("Функція відпрацювала!")
+#
+# if __name__ == "__main__":
+#     func()
 
-if __name__ == "__main__":
-    func()
+# Рекурсивная функція
+def fuc(a):
+    if type(a) is not int:
+        raise TypeError('Числа повинні бути цілими')
+    if a<=0:
+        raise ValueError ('Числа повинні бути позитивними')
+    if a==1:
+        return 1
+    print(a)
+    return fuc(a-1)*a
+
+print(fuc(5))
+# def sum(s):
+#     print(s)
+#     if not s:
+#         return 0
+#     else:
+#         return s[0]+ sum(s[1:])
+# j = [3, 5, 6, 9]
+# print(sum(j))
