@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+
+    <title>
+        {% block title %}
+            курс по верстке
+        {% endblock %}
+    </title>
+</head>
+<body>
+
+{% block body %}
+    Base body
+{% endblock %}
+
+</body>
+
+{% block content %}
+
+{% endblock %}
+
+
+
+{% block footer %}
+    <div class="footer">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Suspension</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Interior</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Exterior</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Maintenance</a></li>
+    </ul>
+    <p class="text-center text-muted">&copy; 2024 Company, Inc</p>
+  </footer>
+</div>
+  <div>
+    {% now 'H:i' %}
+  </div>
+  <div>
+    {% now 'l'  as current_weekday%}
+    To day is {{ current_weekday }}
+   </div>
+
+{% endblock %}
+</html>

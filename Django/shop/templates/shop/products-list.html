@@ -1,0 +1,60 @@
+{% extends 'shop/base.html' %}
+
+ {% block title %}
+     Products list
+ {% endblock %}
+
+{% block body %}
+    <h1>Products:</h1>
+    <div>
+    {% if not products %}
+        <h2>
+            Прдукти відсутні.
+        </h2>
+    {% else %}
+        <ul>
+{#             {% for product in products %}#}
+{#            <li>#}
+{#                <div>Name:{{ product.name }}</div>#}
+{#                 <div>Price:{{ product.price }}</div>#}
+{#                <div>discount:{% firstof product.discount 'no discount' %}</div>#}
+{#             {% endfor %}#}
+                <table width='550' border='2' bordercolor='black'
+                  cellspacing='1' cellpadding='8' align="center"
+                 BGCOLOR="#87ceeb" >
+        <thead>
+            <tr >
+                <th >Ім я</th>
+                <th BGCOLOR="#ff7f50">Ціна</th>
+                <th BGCOLOR="#7cfc00">знижка</th>
+                <th>Час додавання</th>
+                <th BGCOLOR="#CCCCCC">Купити товар</th>
+
+            </tr>
+            <tbody>
+
+                {% for product in products %}
+                    <tr>
+                        <td>{{product.name}}</td>
+                        <td BGCOLOR="#ff7f50">{{product.price}}</td>
+                        <td BGCOLOR="#7cfc00">{% firstof product.discount 'no discount' %}</td>
+                        <td>{{product.created_at}}</td>
+                        <td BGCOLOR="#CCCCCC"><button>Купити</td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </thead>
+</table>
+        </ul>
+
+
+
+
+    {% endif %}
+
+    </div>
+{% endblock %}
+
+
+

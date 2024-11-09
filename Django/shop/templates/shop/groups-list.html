@@ -1,0 +1,33 @@
+{% extends 'shop/base.html' %}
+
+ {% block title %}
+     Groups list
+ {% endblock %}
+
+{% block body %}
+    <h1>Groups:</h1>
+    <div>
+    {% if not groups %}
+        <h2>
+            Групи відсутні.
+        </h2>
+    {% else %}
+        <ul>
+             {% for group in groups %}
+            <li>
+                <div>{{ group.name }}</div>
+                <ul>
+                    {% for permission in group.permissions.all %}
+                    <li>{{ permission.name }}
+                        ( <code>{{ permission.codename }}</code>)
+                    </li>
+                     {% endfor %}
+                </ul>
+
+            </li>
+    {% endfor %}
+        </ul>
+    {% endif %}
+
+    </div>
+{% endblock %}

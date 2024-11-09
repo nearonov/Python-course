@@ -1,0 +1,31 @@
+{% if courses %}
+<table width='550' border='2' bordercolor='black'
+       cellspacing='1' cellpadding='8' align="center" >
+    <thead>
+    <tr>
+        <th>Курси</th>
+        <th>Категорія</th>
+        <th>Вартість</th>
+        <th>Кількість судентів</th>
+        <th></th>
+    </tr>
+    <tbody>
+
+    {% for course in courses %}
+        <tr>
+            <td>{{course.title}}</td>
+            <td>{{course.category}}</td>
+            <td>{{course.price}}</td>
+            <td>{{course.students_qty}}</td>
+            <td><button>Купити</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </thead>
+</table>
+{% else %}
+Даних румає.
+{% endif %}
+
+
+

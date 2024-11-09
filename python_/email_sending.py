@@ -22,3 +22,9 @@ with smtplib.SMTP(host='smtp.gmail.com', port=587) as smtp_server:
     smtp_server.login('storeserver17@gmail.com', 'dsjy muck oquu gjdl')
     smtp_server.send_message(my_email)
     print("Жека привіт!")
+
+
+# with smtplib.SMTP(host='localhost', port=2525) as smtp_server:
+#     smtp_server.ehlo()
+#     smtp_server.send_message(my_email)
+#     print("Жека привіт!")

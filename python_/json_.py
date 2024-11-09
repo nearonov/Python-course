@@ -21,18 +21,21 @@ import json
 # f=json.loads(json_array)
 # print(f)# [34, 56, 67]
 
-name = dict(first='Bob', last ='Smith')
-rec = dict(name = name, job = ['dev', 'mgr'], age = 40.5)
+name = dict(first='Bob', last='Smith')
+rec = dict(name=name, job=['dev', 'mgr'], age=40.5)
 # dict->json
 json_dict = json.dumps(rec)
-print(rec, type(rec))#{'name': {'first': 'Bob', 'last': 'Smith'},
+print(rec, type(rec))  # {'name': {'first': 'Bob', 'last': 'Smith'},
 # 'job': ['dev', 'mgr'], 'age': 40.5} <class 'dict'>
 
-print(json_dict, type(json_dict))#{"name": {"first": "Bob",
+print(json_dict, type(json_dict))  # {"name": {"first": "Bob",
 # "last": "Smith"}, "job": ["dev", "mgr"], "age": 40.5} <class 'str'>
 
 # json->dict
 dict_json = json.loads(json_dict)
-print(dict_json, type(dict_json))#{'name': {'first': 'Bob',
+print(dict_json, type(dict_json))  # {'name': {'first': 'Bob',
+
+
 # 'last': 'Smith'}, 'job': ['dev', 'mgr'], 'age': 40.5} <class 'dict'>
+
 

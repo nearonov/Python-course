@@ -201,8 +201,8 @@
 # lambda  функція
 # -----------------------------------------
 
-# mult = lambda a, b: a * b
-# print(mult(3,5))
+mult = lambda a, b: a * b
+print(mult(3, 5))
 
 # def get_info(name):
 #     return lambda gate :f"{gate} {name}"
@@ -214,7 +214,7 @@
 # print(moning("Goog moning"))
 
 
-#print(f"__name__ = {__name__}")
+# print(f"__name__ = {__name__}")
 
 # def func():
 #     print("Функція відпрацювала!")
@@ -223,17 +223,18 @@
 #     func()
 
 # Рекурсивная функція
-def fuc(a):
-    if type(a) is not int:
-        raise TypeError('Числа повинні бути цілими')
-    if a<=0:
-        raise ValueError ('Числа повинні бути позитивними')
-    if a==1:
-        return 1
-    print(a)
-    return fuc(a-1)*a
-
-print(fuc(5))
+# def fuc(a):
+#     if type(a) is not int:
+#         raise TypeError('Числа повинні бути цілими')
+#     if a <= 0:
+#         raise ValueError('Числа повинні бути позитивними')
+#     if a == 1:
+#         return 1
+#     print(a)
+#     return fuc(a - 1) * a
+#
+#
+# print(fuc(5))
 # def sum(s):
 #     print(s)
 #     if not s:
@@ -242,3 +243,18 @@ print(fuc(5))
 #         return s[0]+ sum(s[1:])
 # j = [3, 5, 6, 9]
 # print(sum(j))
+
+
+# Две звездочки  перед объектом словаря позволяют
+# передать содержимое словаря как аргументы.
+# Где ключи словаря - имя аргумента, а значения
+# передаются в функцию
+
+# my_dict = {'name': 'Eugene', 'soname': 'Nearonov'}
+#
+#
+# def info(name, soname):
+#     return f"{name} {soname}"
+#
+#
+# print(info(**my_dict))
