@@ -1,14 +1,21 @@
+{% extends 'shop/base_2.html' %}
+
+
+{% block content %}
+
 {% if courses %}
-<table width='550' border='2' bordercolor='black'
-       cellspacing='1' cellpadding='8' align="center" >
-    <thead>
-    <tr>
-        <th>Курси</th>
-        <th>Категорія</th>
-        <th>Вартість</th>
-        <th>Кількість судентів</th>
-        <th></th>
-    </tr>
+<table class="table mt-5 table-bordered table-striped  table-hover" >
+{#       width='550' border='2' bordercolor='black'#}
+{#       cellspacing='1' cellpadding='8' align="center" >#}
+    <thead class="table-dark">
+        <tr>
+            <th>Курси</th>
+            <th>Категорія</th>
+            <th>Вартість</th>
+            <th>Кількість судентів</th>
+            <th></th>
+        </tr>
+    </thead>
     <tbody>
 
     {% for course in courses %}
@@ -17,15 +24,19 @@
             <td>{{course.category}}</td>
             <td>{{course.price}}</td>
             <td>{{course.students_qty}}</td>
-            <td><button>Купити</td>
+            <td><button class="btn btn-primary">Купити</button></td>
         </tr>
     {% endfor %}
     </tbody>
     </thead>
 </table>
 {% else %}
-Даних румає.
+Даних немає.
 {% endif %}
+{% endblock %}
+
+
+
 
 
 
