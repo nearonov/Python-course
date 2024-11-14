@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+ {% block title %}
+     Order list
+ {% endblock %}
+
+{% block body %}
+    <h1>Order:</h1>
+    <div>
+    {% if not orders %}
+        <h2>
+            Закази відсутні.
+        </h2>
+    {% else %}
+        <ul>
+{#             {% for product in products %}#}
+{#            <li>#}
+{#                <div>Name:{{ product.name }}</div>#}
+{#                 <div>Price:{{ product.price }}</div>#}
+{#                <div>discount:{% firstof product.discount 'no discount' %}</div>#}
+{#             {% endfor %}#}
+                <table width='550' border='2' bordercolor='black'
+                  cellspacing='1' cellpadding='8' align="center"
+                 BGCOLOR="#87ceeb" >
+        <thead>
+            <tr >
+                <th >Адреса доставки</th>
+                <th BGCOLOR="#ff7f50">Промо код</th>
+                <th BGCOLOR="#7cfc00">Час замовлення</th>
+                <th>Покупець</th>
+                <th BGCOLOR="#fff8dc">Товар</th>
+                <th >Ціна</th>
+                <th BGCOLOR="#CCCCCC">Купити товар</th>
+
+            </tr>
+            <tbody>
+
+                {% for  order in orders %}
+                    {% for product in order.products.all %}
+                    <tr>
+                        <td>{{order.delivery_address}}</td>
+                        <td BGCOLOR="#ff7f50">{{order.promo_code}}</td>
+                        <td BGCOLOR="#7cfc00">{{order.created_at}}</td>
+                        <td>{% firstof order.user.first_name order.user.username %}</td>
+                        <td BGCOLOR="#fff8dc">{{ product.name }}</td>
+                        <td>{{ product.price }}</td>
+                        <td BGCOLOR="#CCCCCC"><button>Купити</td>
+                    </tr>
+                    {% endfor %}
+                {% endfor %}
+
+            </tbody>
+        </thead>
+</table>
+        </ul>
+
+    {% endif %}
+
+    </div>
+
+{% endblock %}
+
+
+

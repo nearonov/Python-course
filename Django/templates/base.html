@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+
+    <title>
+        {% block title %}
+            курс по верстке
+        {% endblock %}
+    </title>
+</head>
+<body>
+
+{% block body %}
+    Base body
+{% endblock %}
+
+</body>
+
+{% block content %}
+
+{% endblock %}
+
+
+
+{% block footer %}
+
+
+
+  <div>
+    {% now 'H:i' %}
+  </div>
+  <div>
+    {% now 'l'  as current_weekday%}
+    To day is {{ current_weekday }}
+   </div>
+
+{% endblock %}
+</html>
