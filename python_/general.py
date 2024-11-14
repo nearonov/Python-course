@@ -2,6 +2,7 @@ import emoji
 import asyncio
 import itertools
 
+
 # bd = open("D:\каб.УАРНЕТ.txt", 'r').read()
 # ad = bd.split('\n')
 # for i in ad:
@@ -201,12 +202,25 @@ import itertools
 # my_func()
 
 
-#Функция itertools.product() позволяет генерировать
+# Функция itertools.product() позволяет генерировать
 # декартово произведение нескольких последовательностей,
 # что может быть полезно, например, при создании всех
 # возможных комбинаций элементов из нескольких списков.
 
-one_list = ['red', 'blue', 'green']
-two_list = ['S', 'M', 'L']
-other_list = list(itertools.product(one_list, two_list))
-print(other_list)
+# one_list = ['red', 'blue', 'green']
+# two_list = ['S', 'M', 'L']
+# other_list = list(itertools.product(one_list, two_list))
+# print(other_list)
+
+
+# Пример простого генератора, который генерирует последовательность чисел:
+
+def generator():
+    yield 1
+    yield 2
+    yield 3
+
+
+info = generator()
+for value in info:
+    print(value, end=' ')  # 1 2 3

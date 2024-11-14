@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpRequest  # для анатаціі типів request
+from django.http import HttpResponse, HttpRequest,Http404  # для анатаціі типів request
 from django.contrib.auth.models import Group
-from .models import Course, Product,Order
+from .models import Course, Product, Order
 from .forms import CourseForm
+import requests
 
 
 def index(request: HttpRequest):
@@ -15,7 +16,7 @@ def about(request: HttpRequest):
         my_form = CourseForm(request.POST)
         if my_form.is_valid():
             my_form.save()
-        return redirect('index')
+        return redirect('shop:index')
 
     my_form = CourseForm()
     context = {'form': my_form}
@@ -42,10 +43,19 @@ def products_list(request: HttpRequest):
     }
     return render(request, "shop/products-list.html", context)
 
-def order_list(request:HttpRequest):
-    orders = Order.objects. select_related('user').prefetch_related('products').all()
-    context ={
+
+def order_list(request: HttpRequest):
+    orders = Order.objects.select_related('user').prefetch_related('products').all()
+    context = {
         'orders': orders
     }
     return render(request, "shop/order-list.html", context)
+
+
+def single_course(request: HttpRequest, id):
+    try:
+        course = Course.objects.get(pk=id)
+        return render(request, "shop/single_course.html", {"course": course})
+    except Course.DoesNotExist:
+        raise Http404()
 
