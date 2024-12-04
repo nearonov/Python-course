@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,32 +10,177 @@
             курс по верстке
         {% endblock %}
     </title>
+    <style>
+        html{
+            margin: 0;
+        }
+        *{
+            font-family: Arial;
+        }
+        body{
+            text-align: center;
+            background-color: silver;
+            margin: 0;
+        }
+        h1{
+            color:crimson;
+        }
+        h2{
+            color: #3A7734;
+        }
+        th{
+            color: darkblue;
+        }
+        td{
+            color: maroon;
+            font-weight: bold;
+        }
+        footer{
+
+            padding: 40px;
+        }
+        header{
+            height: 70px;
+            padding: 0 40px;
+        }
+        header>div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .fixed-container{
+            max-width: 1000px;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: lightblue;
+        }
+        .eugene{
+            color: blue;
+        }
+        .natalia{
+            color: #3A7734;
+        }
+        section{
+            padding: 40px;
+        }
+        .services{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+
+        }
+        .services>div{
+            width: 200px;
+
+        }
+        .services img{
+            width: 150px;
+        }
+        .first-block{
+            height: 300px;
+        }
+        .first-block>div{
+            display: flex;
+            flex-direction: column;
+            justify-content:  center;
+            align-items: flex-start;
+            background-image:url("{% static 'eugene.jpg' %}") ;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+        .light-button{
+            border: 1px solid black;
+            background-color: transparent;
+        }
+        .darck-button{
+            background-color:blue;
+            border: 1px solid blue;
+            color: white;
+        }
+        button{
+            padding: 10px 30px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+
+    </style>
 </head>
+ <header>
+
+     <div class="fixed-container">
+         <div>
+            <a href="#">Послуги</a>
+            <a href="#">Ввід товару</a>
+             </div>
+         <div>
+             <span>+380502278358</span>
+             <button class="light-button">Заказать звонок</button>
+         </div>
+     </div>
+ </header>
 <body>
 
-{% block body %}
-    Base body
-{% endblock %}
+    {% block body %}
+        <h2>Base course</h2>
+    {% endblock %}
 
+    {% block content %}
+    {% endblock %}
+    <section class="first-block">
+        <div class="fixed-container">
+            <h1 class="eugene">Eugene Nearonov </h1>
+            <p>Fronted розробник</p>
+            <button class="darck-button">Узнати більше</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="fixed-container">
+            <h2 class="natalia">Що я роблю</h2>
+            <div class="services">
+                 <div>
+                     <img src="{% static 'java.png' %}"   alt="">
+                     Розробка і програмування на мові java.
+                 </div>
+                 <div>
+                     <img src="{% static 'go-programming-language-logo-black-background-2M8NA9T.jpg' %}"   alt="">
+                     Розробка і програмування на мові GO.
+                 </div>
+                 <div>
+                     <img src="{% static 'Без названия.png' %}"   alt="">
+                     Аналіз даних
+                 </div>
+                 <div>
+                     <img src="{% static 'ruby.jfif' %}"   alt="">
+                     Розробка і програмування на мові ruby.
+                 </div>
+            </div>
+            <button>Узнати вартість</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="fixed-container">
+            <h2 class="natalia">Приклад роботи</h2>
+        </div>
+    </section>
 </body>
 
-{% block content %}
 
-{% endblock %}
-
-
-
-{% block footer %}
-
-
-
-  <div>
-    {% now 'H:i' %}
-  </div>
-  <div>
-    {% now 'l'  as current_weekday%}
-    To day is {{ current_weekday }}
-   </div>
-
-{% endblock %}
+<footer>
+    <div class="fixed-container">
+    <div>
+        {% now 'H:i' %}
+    </div>
+    <div>
+        {% now 'l'  as current_weekday%}
+        To day is {{ current_weekday }}
+    </div>
+    <a href="#">Послуги</a>
+    <a href="#">Ввід товару</a>
+    </div>
+</footer>
 </html>

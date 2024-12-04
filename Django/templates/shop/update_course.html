@@ -1,0 +1,30 @@
+{% extends 'base_2.html' %}
+
+{% block title %}
+    Редогування курсів
+{% endblock %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <h1>Редогування</h1>
+</head>
+<body>
+<div class="container-fluid my-2 border border-3">
+    <form  method="POST">
+        {% csrf_token %}
+        <table>
+            {{form.as_p}}
+{#               <lаЬеl>Змінити назву</lаЬеl><br>#}
+{#               <input type="text" title="title" value="{{form.title}}" /><br>#}
+{#               <input type="text" title="title" value="{{form.price}}" /><br>#}
+
+
+        </table>
+
+        <input type="submit" value="Зберігти">
+    </form>
+</div>
+</body>
+{% endblock %}

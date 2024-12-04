@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>форма з відео-курса</title>
+    <style>
+        .reg-form{
+          max-width: 500px;
+          margin: 0 auto;
+        }
+        .reg-form>div{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .reg-form_input{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <form class="reg-form">
+        <h1>Реєстрація на конференцію</h1>
+        <div>
+            <label for="name">
+                Призвище Ім'я Побатькові
+            </label>
+            <input class="reg-form_input" type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="email">
+                E-mail:
+            </label>
+            <input class="reg-form_input" type="email" name="name" id="email">
+        </div>
+        <div>
+            <label>
+                Стать
+            </label>
+            <div>
+               <label>
+                   <input type="radio" name="sex" value="male"> чоловічий
+                   <input type="radio" name="sex" value="female"> жіночий
+               </label>
+                </div>
+        </div>
+
+    </form>
+</body>
+</html>

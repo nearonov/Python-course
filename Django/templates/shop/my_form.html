@@ -1,6 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base_2.html' %}
 
+{% block title %}
+    Ввод курсів
+{% endblock %}
+
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <title>form</title>
@@ -8,15 +12,15 @@
 </head>
 <body>
 <div class="container-fluid my-2 border border-3">
-    <form action="{% url 'shop:about' %}" method="POST">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
             {{form.as_p}}
 
         </table>
-        <select></select>
+
         <input type="submit" value="Відправити">
     </form>
 </div>
 </body>
-</html>
+{% endblock %}

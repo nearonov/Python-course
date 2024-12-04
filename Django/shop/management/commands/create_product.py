@@ -7,7 +7,7 @@ class Command(BaseCommand):
         self.stdout.write("Created product")
 
         products = [
-            'Printer'
+            'Printer', 'Noutboock', 'Iphon'
 
         ]
         for product in products:

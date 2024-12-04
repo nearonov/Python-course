@@ -18,6 +18,15 @@ class Course(models.Model):
     reviews_qty = models.IntegerField(blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     create_at = models.DateTimeField(default=timezone.now)
+    foto = models.ImageField(upload_to='images',
+                             help_text="Введіть зображення курсів",
+                             verbose_name="Зображення курсів",
+                             blank=True)
+
+    # Курси розтошувати в алфавитном порядку
+    class Meta:
+        ordering = ['title']
+        verbose_name = 'Назва курсів'
 
     def __str__(self):
         return f"{self.title}"

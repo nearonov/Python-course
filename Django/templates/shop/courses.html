@@ -13,9 +13,12 @@
     <thead class="table-dark">
         <tr>
             <th>Курси</th>
+            <th>Фото</th>
             <th>Категорія</th>
             <th>Вартість</th>
             <th>Кількість судентів</th>
+            <th>Kількість відгуків</th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -24,18 +27,27 @@
     {% for course in courses %}
         <tr>
             <td><a href={% url "shop:single" course.id %}>{{course.title}}</a></td>
+            {% if course.foto %}
+                <td><img class="card-img-top" src="{{ course.foto.url }}" style ="max-height: 70px;" alt="foto" ></td>
+            {% else %}
+                <td></td>
+            {% endif %}
             <td>{{course.category}}</td>
             <td>{{course.price}}</td>
             <td>{{course.students_qty}}</td>
-            <td><button class="btn btn-primary">Купити</button></td>
+            <td>{{course.reviews_qty}}</td>
+            <td><a href={% url "shop: edit" course.id %}><button class="btn btn-primary">Редогувати</button></a></td>
+            <td><a href={% url "shop:delete" course.id%}><button  class="btn btn-danger" >Видалити</button></a></td>
         </tr>
+        </lo>
     {% endfor %}
     </tbody>
-    </thead>
+
 </table>
 {% else %}
 Даних немає.
 {% endif %}
+
 {% endblock %}
 
 

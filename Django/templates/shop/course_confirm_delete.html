@@ -1,0 +1,10 @@
+{% extends "base_2.html" %}
+{% block content %}
+    <h1>Видалення курса</h1>
+    <p>Ви впевноні, що хочите видалити курс: {{ course }} </p>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <input type="submit" action="" value="Видалити"/>
+    </form>
+{% endblock %}

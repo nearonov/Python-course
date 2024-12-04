@@ -8,13 +8,18 @@ class CourseForm(forms.ModelForm):
                             initial="Введіть назву курса",
                             )
 
-
     # category = forms.ChoiceField(label="категорія курсів",
     #                              choices=((1, 'Programming'),
     #                                       (2, 'Data science'),
     #                                       (3, 'Web designer')))
 
-
     class Meta:
         model = Course
-        fields = ['title', 'category', 'price']
+        fields = ['title', 'category', 'price', 'foto']
+
+
+class CourseEdit(forms.ModelForm):
+    class Meta:
+        model = Course
+        fields = ['title', 'price']
+        labels = {'title': "Змінити назву курса", 'price': 'Ціна'}
