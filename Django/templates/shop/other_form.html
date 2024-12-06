@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>форма з відео-курса</title>
     <style>
+        body{
+            background:#bbccdd;
+        }
         .reg-form{
           max-width: 500px;
           margin: 0 auto;
@@ -16,10 +19,13 @@
         .reg-form_input{
             width: 50%;
         }
+        .reg-form textarea{
+            height: 150px;
+        }
     </style>
 </head>
 <body>
-    <form class="reg-form">
+    <form class="reg-form" >
         <h1>Реєстрація на конференцію</h1>
         <div>
             <label for="name">
@@ -31,7 +37,7 @@
             <label for="email">
                 E-mail:
             </label>
-            <input class="reg-form_input" type="email" name="name" id="email">
+            <input class="reg-form_input" type="email" name="email" id="email">
         </div>
         <div>
             <label>
@@ -43,6 +49,42 @@
                    <input type="radio" name="sex" value="female"> жіночий
                </label>
                 </div>
+        </div>
+        <div>
+            <label>
+                Переважний час виступу:
+            </label>
+            <div>
+                <label>
+                    <input type="checkbox" name="time_morning" value="1">ранок
+                </label>
+                <label>
+                     <input type="checkbox" name="time_afternoon" value="1">день
+                </label>
+                <label>
+                    <input type="checkbox" name="time_evening" value="1">вечір
+                </label>
+            </div>
+        </div>
+        <div>
+            <label>Сєкціі</label>
+            <select name="section" class="reg-form_input">
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+                <option value="management">Management</option>
+            </select>
+        </div>
+        <div>
+            <label>Тема і тезиси виступу</label>
+            <textarea name="info" class="reg-form_input"></textarea>
+        </div>
+        <div>
+            <label>Презентація</label>
+            <input type="file" name="presentation">
+        </div>
+        <div>
+            <input type="reset" value="Сброс">
+            <input type="submit" value="Відправити">
         </div>
 
     </form>
