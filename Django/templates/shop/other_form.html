@@ -3,90 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>форма з відео-курса</title>
-    <style>
-        body{
-            background:#bbccdd;
-        }
-        .reg-form{
-          max-width: 500px;
-          margin: 0 auto;
-        }
-        .reg-form>div{
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-        .reg-form_input{
-            width: 50%;
-        }
-        .reg-form textarea{
-            height: 150px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../../static/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
-<body>
+
+<body class="p-3 mb-2 bg-info text-dark"">
     <form class="reg-form" >
         <h1>Реєстрація на конференцію</h1>
-        <div>
-            <label for="name">
+        <div class="mb-3">
+            <label for="name" class="form-label">
                 Призвище Ім'я Побатькові
             </label>
-            <input class="reg-form_input" type="text" name="name" id="name">
+            <input class="reg-form_input form-control" type="text" name="name" id="name">
         </div>
-        <div>
-            <label for="email">
+        <div class="mb-3">
+            <label for="email"class="form-label">
                 E-mail:
             </label>
-            <input class="reg-form_input" type="email" name="email" id="email">
+            <input class="reg-form_input form-control" type="email" name="email" id="email">
         </div>
-        <div>
-            <label>
+        <div class="mb-3">
+            <label class="form-label">
                 Стать
             </label>
-            <div>
+            <div >
                <label>
-                   <input type="radio" name="sex" value="male"> чоловічий
-                   <input type="radio" name="sex" value="female"> жіночий
+                   <input class="form-check-input" type="radio" name="sex" value="male"> чоловічий
+                   <input class="form-check-input" type="radio" name="sex" value="female"> жіночий
                </label>
                 </div>
         </div>
-        <div>
-            <label>
+        <div class="mb-3">
+            <label class="form-label">
                 Переважний час виступу:
             </label>
-            <div>
+            <div >
                 <label>
-                    <input type="checkbox" name="time_morning" value="1">ранок
+                    <input class="form-check-input" type="checkbox" name="time_morning" value="1">ранок
                 </label>
                 <label>
-                     <input type="checkbox" name="time_afternoon" value="1">день
+                     <input class="form-check-input" type="checkbox" name="time_afternoon" value="1">день
                 </label>
                 <label>
-                    <input type="checkbox" name="time_evening" value="1">вечір
+                    <input class="form-check-input" type="checkbox" name="time_evening" value="1">вечір
                 </label>
             </div>
         </div>
-        <div>
-            <label>Сєкціі</label>
-            <select name="section" class="reg-form_input">
+        <div class="mb-3">
+            <label class="form-label">Сєкціі</label>
+            <select name="section" class="form-select">
                 <option value="frontend">Frontend</option>
                 <option value="backend">Backend</option>
                 <option value="management">Management</option>
             </select>
         </div>
-        <div>
-            <label>Тема і тезиси виступу</label>
-            <textarea name="info" class="reg-form_input"></textarea>
+        <div class="mb-3">
+            <label class="form-label">Тема і тезиси виступу</label>
+            <textarea name="info" class="form-control"></textarea>
         </div>
-        <div>
-            <label>Презентація</label>
-            <input type="file" name="presentation">
+        <div class="mb-3">
+            <label class="form-label">Презентація</label>
+            <input type="file" class="form-control"  name="presentation">
         </div>
-        <div>
-            <input type="reset" value="Сброс">
-            <input type="submit" value="Відправити">
+        <div class="mb-3">
+            <input type="reset" class="btn btn-danger" value="Сброс">
+            <input type="submit" class="btn btn-success" value="Відправити">
         </div>
 
     </form>
+
 </body>
 </html>
