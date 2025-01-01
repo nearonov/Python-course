@@ -1,0 +1,39 @@
+{% extends 'base_2.html' %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+    <style>
+        button{
+            color: white;
+            background-color: dodgerblue;
+            border-radius: 5px;
+    }
+    </style>
+    <H2>Вхід</H2>
+    {% if user.is_authenticated %}
+        <h2 style="color: crimson">Ви вже здіїснили вхід!</h2>
+    {% else %}
+         <form method="post">
+            {% csrf_token %}
+             {% if error %}
+                <p style="color: red">
+                    {{ error }}
+                </p>
+             {% endif %}
+{#             <p>#}
+{#                 <label for="username">Useername</label>#}
+{#                 <input type="text" id="username" name="username" required>#}
+{#             </p>#}
+{#             <p>#}
+{#                 <label for="password">Password</label>#}
+{#                 <input type="text" id="password" name="password" required>#}
+{#             </p>#}
+                {{ form.as_p }}
+             <button type="submit">Login</button>
+         </form>
+    {% endif %}
+{% endblock %}
+

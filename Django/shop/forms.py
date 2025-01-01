@@ -1,5 +1,5 @@
 from django import forms
-from .models import Course
+from .models import Course, Product
 
 
 class CourseForm(forms.ModelForm):
@@ -23,3 +23,14 @@ class CourseEdit(forms.ModelForm):
         model = Course
         fields = ['title', 'price']
         labels = {'title': "Змінити назву курса", 'price': 'Ціна'}
+
+
+class ProductsCreate(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['name', 'price', 'discount']
+        labels = {'name': "Ввести назву подукта",
+                  'price': 'Ввести ціну',
+                  'discount': 'знижка'
+                  }
+

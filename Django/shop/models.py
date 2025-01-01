@@ -3,6 +3,11 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 
+
+# from myauth.models import AdvUser
+
+
+
 class Category(models.Model):
     title = models.CharField(max_length=255)
     create_at = models.DateTimeField(default=timezone.now)

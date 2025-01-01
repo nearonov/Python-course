@@ -14,7 +14,33 @@
             color: maroon;
             font-weight: bold;
         }
-
+        .light-button {
+            position: fixed;
+            text-decoration: none;
+            color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: 10px;
+            top: 10px;
+            background-color: limegreen;
+            padding: 5px;
+            width: 80px;
+            height: 20px;
+            border-radius: 5px;
+         }
+        .open-popup{
+            position: absolute;
+            text-decoration: none;
+            color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: 10px;
+            padding: 10px;
+            width: 80px;
+            height: 20px;
+        }
     </style>
     <title>
         {% block title %}
@@ -31,8 +57,17 @@
         <div class="container-fluid">
             <a href={% url "shop:about" %}  class="navbar-grand">Ввод курсів </a>
         </div>
+        <div class="container-fluid">
+             <a class="navbar-grand " href={% url "myauth:login"%}>
+             <button class="light-button open-popup" >Увійти</button></a>
+        </div>
+        {% if user.is_authenticated %}
+            <div class="container-fluid">
+                 <a class="navbar-grand " href={% url "myauth:logout" %}>
+                 <button class="open-popup" >Вийти</button></a>
+            </div>
+        {% endif %}
     </nav>
-
 
     <main class="container">  {#    отступ зліва і праворуч#}
     {% block content %}

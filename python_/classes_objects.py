@@ -180,9 +180,11 @@
 class ExtendedList(list):
     def print_info_list(self):
         print(f"list has {len(self)} elements")
-        #return (f"list has {len(self)} elements")
+        # return (f"list has {len(self)} elements")
+
+
 my_list = ExtendedList(['Eugene', 'Nataliy', 'Bogdan'])
-my_list.print_info_list() #list has 3 elements
+my_list.print_info_list()  # list has 3 elements
 my_list.append('Ivan')
-my_list.print_info_list() #list has 4 elements
-#Єархія класів: my_list-> ExtendedList -> list -> object
+my_list.print_info_list()  # list has 4 elements
+# Єархія класів: my_list-> ExtendedList -> list -> object

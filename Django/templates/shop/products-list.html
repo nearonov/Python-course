@@ -1,42 +1,51 @@
 {% extends 'base.html' %}
 
- {% block title %}
-     Products list
- {% endblock %}
+{% block title %}
+    Products list
+{% endblock %}
 
 
 {% block content %}
     <style>
-         .price-list{
-            width:550px;
-           border: 1px solid black;
-           align-self: center;
-           margin: auto;
-         }
-         .price-list th, .price-list td{
-             border: 1px solid black;
-             padding: 5px;
-         }
+        .price-list {
+            width: 550px;
+            border: 1px solid black;
+            align-self: center;
+            margin: auto;
+        }
+
+        .price-list th, .price-list td {
+            border: 1px solid black;
+            padding: 5px;
+        }
 
     </style>
+    <h1>Create products:</h1>
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Create</button>
+        </form>
+    </div>
     <h1>Products:</h1>
     <div>
-    {% if not products %}
-        <h2>
-            Прдукти відсутні.
-        </h2>
-    {% else %}
-        <ul>
-{#             {% for product in products %}#}
-{#            <li>#}
-{#                <div>Name:{{ product.name }}</div>#}
-{#                 <div>Price:{{ product.price }}</div>#}
-{#                <div>discount:{% firstof product.discount 'no discount' %}</div>#}
-{#             {% endfor %}#}
-            <table class="price-list"  >
-                <thead>
-                    <tr >
-                        <th bgcolor="#ffe4e1" >Ім я</th>
+        {% if not products %}
+            <h2>
+                Прдукти відсутні.
+            </h2>
+        {% else %}
+            <ul>
+                {#             {% for product in products %}#}
+                {#            <li>#}
+                {#                <div>Name:{{ product.name }}</div>#}
+                {#                 <div>Price:{{ product.price }}</div>#}
+                {#                <div>discount:{% firstof product.discount 'no discount' %}</div>#}
+                {#             {% endfor %}#}
+                <table class="price-list">
+                    <thead>
+                    <tr>
+                        <th bgcolor="#ffe4e1">Ім я</th>
                         <th BGCOLOR="#ff7f50">Ціна</th>
                         <th BGCOLOR="#7cfc00">знижка</th>
                         <th bgcolor="#deb887">Час додавання</th>
@@ -45,23 +54,26 @@
                     </tr>
                     <tbody>
 
-                        {% for product in products %}
-                            <tr>
-                                <td bgcolor="#ffe4e1">{{product.name}}</td>
-                                <td BGCOLOR="#ff7f50">{{product.price}}</td>
-                                <td BGCOLOR="#7cfc00">{% firstof product.discount 'no discount' %}</td>
-                                <td bgcolor="#deb887">{{product.created_at}}</td>
-                                <td BGCOLOR="#CCCCCC"><button>Купити</td>
+                    {% for product in products %}
+                        <tr>
+                            <td bgcolor="#ffe4e1"><a
+                                    href="{% url "shop:product-detail" pk=product.pk %}"> {{ product.name }}</a></td>
+                            <td BGCOLOR="#ff7f50">{{ product.price }}</td>
+                            <td BGCOLOR="#7cfc00">{% firstof product.discount 'no discount' %} %</td>
+                            <td bgcolor="#deb887">{{ product.created_at }}</td>
+                            <td BGCOLOR="#CCCCCC">
+                                <button>Купити
+                            </td>
 
-                            </tr>
-                        {% endfor %}
+                        </tr>
+                    {% endfor %}
                     </tbody>
-                <thead/>
-            </table>
+                    <thead/>
+                </table>
 
-        </ul>
+            </ul>
 
-    {% endif %}
+        {% endif %}
 
     </div>
 {% endblock %}
